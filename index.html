@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>海龟汤</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="atmosphere" aria-hidden="true">
+    <span class="lamp"></span>
+    <span class="scanline"></span>
+    <span class="grain"></span>
+  </div>
+  <main class="app">
+    <section class="topbar" aria-label="游戏控制">
+      <div>
+        <p class="eyebrow">Lateral thinking mystery</p>
+        <h1>海龟汤</h1>
+        <p class="subtitle">一名主持人掌握真相，其余人只能用“是 / 否 / 无关”逼近现场。</p>
+      </div>
+      <div class="actions">
+        <button id="newSoupBtn" class="iconButton" type="button" aria-label="换一题" title="换一题">↻</button>
+        <button id="hostToggleBtn" class="hostButton" type="button" aria-pressed="false">主持人模式</button>
+      </div>
+    </section>
+
+    <section class="layout">
+      <article class="storyPanel" aria-live="polite">
+        <img class="caseArt" src="./assets/case-desk.svg" alt="">
+        <div class="caseTape" aria-hidden="true">DO NOT CROSS · QUESTION EVERYTHING · DO NOT CROSS</div>
+        <div class="storyHeader">
+          <span id="difficulty" class="pill">中等</span>
+          <span id="theme" class="theme">日常异变</span>
+        </div>
+        <div class="caseMeta">
+          <span id="caseId">CASE 001</span>
+          <span>未结案</span>
+          <span>口供待核验</span>
+        </div>
+        <h2 id="title">加载中</h2>
+        <p id="scene" class="scene"></p>
+        <div class="evidenceStrip" aria-label="现场证物">
+          <span>录音笔</span>
+          <span>目击记录</span>
+          <span>时间线</span>
+        </div>
+        <div class="meter" aria-label="破案进度">
+          <span id="progressFill"></span>
+        </div>
+        <p id="progressText" class="progressText">线索 0 / 0</p>
+      </article>
+
+      <aside class="sidePanel">
+        <div class="panelHeader">
+          <span>调查板</span>
+          <small>主持人可勾选关键点</small>
+        </div>
+        <div class="tabs" role="tablist" aria-label="信息面板">
+          <button class="tab active" id="askTab" type="button" role="tab" aria-selected="true">提问</button>
+          <button class="tab" id="hintTab" type="button" role="tab" aria-selected="false">提示</button>
+          <button class="tab" id="answerTab" type="button" role="tab" aria-selected="false">谜底</button>
+        </div>
+
+        <section id="askPane" class="pane active" role="tabpanel" aria-labelledby="askTab">
+          <form id="questionForm" class="questionForm">
+            <input id="questionInput" type="text" autocomplete="off" placeholder="输入一个是/否问题">
+            <button type="submit">记录</button>
+          </form>
+          <div class="quickAnswers" aria-label="快速回答">
+            <button type="button" data-answer="是">是</button>
+            <button type="button" data-answer="否">否</button>
+            <button type="button" data-answer="无关">无关</button>
+            <button type="button" data-answer="接近">接近</button>
+          </div>
+          <ol id="logList" class="logList"></ol>
+        </section>
+
+        <section id="hintPane" class="pane" role="tabpanel" aria-labelledby="hintTab">
+          <button id="hintBtn" class="wideButton" type="button">给一个提示</button>
+          <ul id="hintList" class="hintList"></ul>
+        </section>
+
+        <section id="answerPane" class="pane locked" role="tabpanel" aria-labelledby="answerTab">
+          <button id="revealBtn" class="wideButton danger" type="button">揭晓谜底</button>
+          <div id="answerContent" class="answerContent" hidden>
+            <h3>真相</h3>
+            <p id="answerText"></p>
+            <h3>关键点</h3>
+            <ul id="keyList"></ul>
+          </div>
+        </section>
+      </aside>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>
