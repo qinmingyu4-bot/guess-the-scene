@@ -2,7 +2,7 @@
 
 一个可以直接在浏览器里玩的海龟汤小游戏。玩家只能通过“是 / 否 / 无关 / 接近”的问答逼近真相，主持人可以查看谜底、释放提示并勾选关键线索。
 
-**当前版本：** v1.0.1
+**当前版本：** v1.0.2
 
 ## 功能
 
@@ -19,7 +19,25 @@
 
 这是一个纯静态项目，不需要安装依赖。
 
-直接打开：
+推荐用本地服务器运行：
+
+```sh
+node scripts/server.mjs
+```
+
+然后在浏览器访问：
+
+```text
+http://127.0.0.1:4173
+```
+
+需要换端口时：
+
+```sh
+PORT=5173 node scripts/server.mjs
+```
+
+也可以直接打开：
 
 ```text
 index.html
@@ -96,6 +114,7 @@ guess-the-scene/
   script.js
   package.json
   scripts/
+    server.mjs
     ship.mjs
   assets/
     case-desk.svg

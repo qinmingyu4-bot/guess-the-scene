@@ -2,6 +2,20 @@
 
 所有重要变更都会记录在这里。
 
+## v1.0.2 - 2026-05-08
+
+### Changed
+
+- Add local server runtime
+
+## Unreleased
+
+### Added
+
+- 新增本地静态服务器 `scripts/server.mjs`。
+- 新增 `start` / `serve` 脚本，支持通过 `http://127.0.0.1:4173` 访问游戏。
+- README 新增本地服务器运行说明。
+
 ## v1.0.1 - 2026-05-08
 
 ### Changed

@@ -1,9 +1,11 @@
 {
   "name": "guess-the-scene",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": true,
   "description": "A browser-based turtle soup mystery game.",
   "scripts": {
+    "serve": "node scripts/server.mjs",
+    "start": "node scripts/server.mjs",
     "ship": "node scripts/ship.mjs",
     "release": "node scripts/ship.mjs"
   }
